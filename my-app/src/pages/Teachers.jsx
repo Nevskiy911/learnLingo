@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { ref, onValue } from "firebase/database";
 import { db } from "../firebase";
+import TeacherCard from "../components/TeacherCard/TeacherCard";
 
 export default function Teachers() {
   const [teachers, setTeachers] = useState([]);
@@ -29,12 +30,7 @@ export default function Teachers() {
       <h2>Teachers page</h2>
       <ul>
         {teachers.map((t) => (
-          <li key={t.id}>
-            <strong>
-              {t.name} {t.surname}
-            </strong>{" "}
-            – {t.languages.join(", ")} – ${t.price_per_hour}/hour
-          </li>
+          <TeacherCard key={t.id} teacher={t} />
         ))}
       </ul>
     </div>

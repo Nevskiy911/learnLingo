@@ -1,0 +1,29 @@
+.teacherCard {
+    display: flex;
+    height: 100%;
+    gap: 48px;
+}
+
+.img {
+    border-radius: 100px;
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+}
+
+.border {
+    border: 3px solid #fbe9ba;
+    border-radius: 100px;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.description {}
+
+.underline {
+    text-decoration: underline;
+}

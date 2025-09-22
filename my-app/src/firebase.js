@@ -2,15 +2,14 @@ import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCw33rhfnuRs6QjAzJ5NLmeMqq4i3sQuws",
-  authDomain: "learn-lingo-3e7ba.firebaseapp.com",
-  databaseURL:
-    "https://learn-lingo-3e7ba-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "learn-lingo-3e7ba",
-  storageBucket: "learn-lingo-3e7ba.firebasestorage.app",
-  messagingSenderId: "970566827532",
-  appId: "1:970566827532:web:8b6c4cfc2ce925f0087829",
-  measurementId: "G-6Z5FY91XTT",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  databaseURL: import.meta.env.VITE_FIREBASE_DB_URL,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);

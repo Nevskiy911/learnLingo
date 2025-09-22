@@ -1,4 +1,5 @@
-import "./index.css";
+import "modern-normalize/modern-normalize.css";
+import "./styles/reset.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom/client";
