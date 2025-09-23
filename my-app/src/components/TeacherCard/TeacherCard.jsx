@@ -1,3 +1,4 @@
+import CardsHeader from "../CardsHeader/CardsHeader";
 import s from "./TeacherCard.module.css";
 
 export default function TeacherCard({ teacher }) {
@@ -11,10 +12,15 @@ export default function TeacherCard({ teacher }) {
         />
       </span>
       <div className={s.description}>
-        <p>Languages</p>
-        <h3>
-          {teacher.name} {teacher.surname}
-        </h3>
+        <div className={s.headerWrapper}>
+          <CardsHeader teacher={teacher} />
+          <div className={s.nameWrapper}>
+            <p>Languages</p>
+            <h3>
+              {teacher.name} {teacher.surname}
+            </h3>
+          </div>
+        </div>
         <p>
           Speaks:{" "}
           <span className={s.underline}>{teacher.languages.join(", ")}</span>
