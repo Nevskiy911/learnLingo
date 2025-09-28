@@ -5,6 +5,7 @@ import TeacherCard from "../components/TeacherCard/TeacherCard";
 
 export default function Teachers() {
   const [teachers, setTeachers] = useState([]);
+  const [visibleCount, setVisibleCount] = useState(4);
 
   useEffect(() => {
     const teachersRef = ref(db, "teachers");
@@ -21,14 +22,21 @@ export default function Teachers() {
     });
   }, []);
 
+  const handleLoadMore = () => {
+    setVisibleCount((prev) => prev + 4);
+  };
+
   return (
     <div>
       <h2>Teachers page</h2>
       <ul>
-        {teachers.map((t) => (
+        {teachers.slice(0, visibleCount).map((t) => (
           <TeacherCard key={t.id} teacher={t} />
         ))}
       </ul>
+      {visibleCount < teachers.length && (
+        <button onClick={handleLoadMore}>Load more</button>
+      )}
     </div>
   );
 }

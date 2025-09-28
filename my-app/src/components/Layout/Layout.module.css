@@ -1,0 +1,41 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 128px;
+    height: 88px;
+}
+
+.rightBlock {
+    display: flex;
+    align-items: center;
+    gap: 268px;
+}
+
+.authButtons {
+    display: flex;
+}
+
+.authBtn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: color background 0.2s;
+}
+
+.authBtn:hover,
+.authBtn:focus {
+    background: #121417;
+    color: #ffffff;
+}
+
+.icon {
+    stroke: currentColor;
+    fill: none;
+}
