@@ -1,0 +1,15 @@
+.btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    /* чорне за замовчуванням */
+    transition: color 0.3s ease;
+}
+
+.btn:hover,
+.btn.active,
+.btn:focus {
+    color: #F4C550;
+    /* золоте серце */
+}
