@@ -1,6 +1,6 @@
-import { useAuth } from "../../context/AuthContext";
-import { useFavorites } from "../../context/FavoritesContext";
 import LikeIcon from "../LikeIcon/LikeIcon";
+import { useFavorites } from "../../context/FavoritesContext";
+import { useAuth } from "../../context/AuthContext";
 import s from "./FavoriteButton.module.css";
 
 export default function FavoriteButton({ cardId, onRequireAuth }) {
@@ -16,7 +16,7 @@ export default function FavoriteButton({ cardId, onRequireAuth }) {
   };
 
   return (
-    <button onClick={handleClick} className={s.btn}>
+    <button className={s.btn} onClick={handleClick}>
       <LikeIcon active={isFavorite(cardId)} />
     </button>
   );

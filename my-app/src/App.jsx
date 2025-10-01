@@ -4,12 +4,14 @@ import Layout from "./components/Layout/Layout";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
+import SvgSprite from "./components/SvgSprite/SvgSprite";
 
 function App() {
   const isAuthenticated = false;
 
   return (
     <>
+      <SvgSprite />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

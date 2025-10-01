@@ -2,14 +2,18 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #000000;
-    /* чорне за замовчуванням */
+    /* color: #000000; */
     transition: color 0.3s ease;
 }
 
-.btn:hover,
-.btn.active,
-.btn:focus {
+.btn svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.btn:hover use,
+.btn.active use,
+.btn:focus use {
     color: #F4C550;
-    /* золоте серце */
 }

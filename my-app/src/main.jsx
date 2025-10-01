@@ -1,5 +1,7 @@
 import "modern-normalize/modern-normalize.css";
 import "./styles/reset.css";
+import "./styles/index.css";
+import "./styles/fonts.css";
 import App from "./App.jsx";
 import ReactDOM from "react-dom/client";
 import React from "react";

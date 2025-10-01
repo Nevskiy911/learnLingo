@@ -1,0 +1,71 @@
+export default function SvgSprite() {
+  return (
+    <svg style={{ display: "none" }}>
+      <symbol id="online" viewBox="0 0 32 32">
+        <path d="M32 16c0 8.837-7.163 16-16 16s-16-7.163-16-16c0-8.837 7.163-16 16-16s16 7.163 16 16z" />
+        <path d="M26.667 16c0 5.891-4.776 10.667-10.667 10.667s-10.667-4.776-10.667-10.667c0-5.891 4.776-10.667 10.667-10.667s10.667 4.776 10.667 10.667z" />
+      </symbol>
+
+      <symbol id="login" viewBox="0 0 32 32">
+        <path
+          d="M20 4h1.6c2.24 0 3.36 0 4.216 0.436 0.753 0.383 1.364 0.995 1.748 1.748 0.436 0.856 0.436 1.976 0.436 4.216v11.2c0 2.24 0 3.36-0.436 4.216-0.384 0.753-0.995 1.364-1.748 1.748-0.856 0.436-1.976 0.436-4.216 0.436h-1.6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M13.333 9.333l6.667 6.667M20 16l-6.667 6.667M20 16h-16"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </symbol>
+
+      <symbol id="ukraine" viewBox="0 0 32 32">
+        <path
+          fill="#ffda44"
+          style={{ fill: "var(--color1, #ffda44)" }}
+          d="M16 32c8.837 0 16-7.163 16-16s-7.163-16-16-16c-8.837 0-16 7.163-16 16s7.163 16 16 16z"
+        />
+        <path
+          fill="#338af3"
+          style={{ fill: "var(--color2, #338af3)" }}
+          d="M0 16c0-8.836 7.163-16 16-16s16 7.163 16 16z"
+        />
+      </symbol>
+
+      <symbol id="like" viewBox="0 0 38 32">
+        <path
+          fill="currentColor"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeMiterlimit="4"
+          strokeWidth="2.9091"
+          d="M32.839 4.355c-0.805-0.805-1.76-1.444-2.812-1.88s-2.179-0.66-3.318-0.66-2.266 0.224-3.318 0.66c-1.052 0.436-2.007 1.075-2.812 1.88l-1.67 1.67-1.67-1.67c-1.626-1.626-3.831-2.539-6.13-2.539s-4.504 0.913-6.13 2.539c-1.626 1.626-2.539 3.831-2.539 6.13s0.913 4.504 2.539 6.13l13.93 13.93 13.93-13.93c0.805-0.805 1.444-1.76 1.88-2.812s0.66-2.179 0.66-3.318-0.224-2.266-0.66-3.318c-0.436-1.052-1.075-2.007-1.88-2.812z"
+        />
+      </symbol>
+
+      <symbol id="close" viewBox="0 0 32 32">
+        <path
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeMiterlimit="4"
+          strokeWidth="2.5"
+          d="M24 8l-16 16"
+        />
+        <path
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeMiterlimit="4"
+          strokeWidth="2.5"
+          d="M8 8l16 16"
+        />
+      </symbol>
+    </svg>
+  );
+}

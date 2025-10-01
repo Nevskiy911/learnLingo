@@ -9,8 +9,33 @@
 }
 
 .content {
+    position: relative;
     background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    min-width: 320px;
+    padding: 64px;
+    border-radius: 30px;
+    width: 565px;
+    height: auto;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeBtn svg {
+    stroke: #000;
+    fill: none;
+    transition: stroke 0.2s ease;
+}
+
+.closeBtn:hover svg {
+    stroke: #f00;
 }
