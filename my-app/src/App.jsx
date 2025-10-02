@@ -5,9 +5,15 @@ import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
 import SvgSprite from "./components/SvgSprite/SvgSprite";
+import { useAuth } from "./context/AuthContext";
+
+import { useModal } from "./context/ModalContext";
 
 function App() {
-  const isAuthenticated = false;
+  const { user } = useAuth();
+  const isAuthenticated = !!user;
+
+  const { showLogin, setShowLogin, showRegister, setShowRegister } = useModal();
 
   return (
     <>
@@ -19,15 +25,20 @@ function App() {
           <Route
             path="/favorites"
             element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
+              <PrivateRoute
+                isAuthenticated={isAuthenticated}
+                onRequireAuth={() => setShowLogin(true)}
+              >
                 <Favorites />
               </PrivateRoute>
             }
           />
         </Route>
       </Routes>
+
+      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
+      {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
     </>
   );
 }
-
 export default App;

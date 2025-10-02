@@ -8,15 +8,18 @@ import React from "react";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { FavoritesProvider } from "./context/FavoritesContext.jsx";
+import { ModalProvider } from "./context/ModalContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <FavoritesProvider>
-          <App />
-        </FavoritesProvider>
-      </AuthProvider>
+      <ModalProvider>
+        <AuthProvider>
+          <FavoritesProvider>
+            <App />
+          </FavoritesProvider>
+        </AuthProvider>
+      </ModalProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
