@@ -1,7 +1,7 @@
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(238, 238, 238, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,6 +13,7 @@
     background: #fff;
     padding: 64px;
     border-radius: 30px;
+    border: none;
     width: 565px;
     height: auto;
 }
@@ -36,6 +37,7 @@
     transition: stroke 0.2s ease;
 }
 
-.closeBtn:hover svg {
-    stroke: #f00;
+.closeBtn:hover svg,
+.closeBtn:focus svg {
+    stroke: var(--primary-color);
 }

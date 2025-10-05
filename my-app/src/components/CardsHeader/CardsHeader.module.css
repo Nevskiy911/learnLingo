@@ -1,15 +1,46 @@
 .wrapper {
     display: flex;
-    gap: 16px;
-    margin-right: 64px;
-    height: fit-content;
+    flex-direction: row;
+    gap: 64px;
 }
 
-.wrapper li {
+.list {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+
+.list li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
     padding-right: 16px;
     border-right: 1px solid rgba(18, 20, 23, 0.2);
 }
 
-.wrapper li:last-child {
+.list li:last-child {
     border-right: none;
+    padding-right: 0;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.iconRating {
+    width: 16px;
+    height: 16px;
+    fill: #FFC531;
+    stroke: #FFC531;
+    margin-right: 4px;
+}
+
+.price {
+    color: #38cd3e;
 }

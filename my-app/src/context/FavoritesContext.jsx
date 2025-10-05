@@ -20,9 +20,11 @@ export const FavoritesProvider = ({ children }) => {
     );
   };
 
+  const clearFavorites = () => setFavorites([]);
+
   return (
     <FavoritesContext.Provider
-      value={{ favorites, isFavorite, toggleFavorite }}
+      value={{ favorites, isFavorite, toggleFavorite, clearFavorites }}
     >
       {children}
     </FavoritesContext.Provider>

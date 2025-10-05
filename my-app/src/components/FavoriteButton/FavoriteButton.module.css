@@ -1,19 +1,21 @@
 .btn {
-    background: none;
-    border: none;
+    display: flex;
+    padding: 0;
     cursor: pointer;
-    /* color: #000000; */
-    transition: color 0.3s ease;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+    outline: none;
+    background: none;
 }
 
 .btn svg {
-    display: block;
-    width: 24px;
-    height: 24px;
+    margin: 0;
+    padding: 0;
+    width: 22px;
+    height: 20px;
 }
 
 .btn:hover use,
 .btn.active use,
 .btn:focus use {
-    color: #F4C550;
+    color: var(--primary-color);
 }

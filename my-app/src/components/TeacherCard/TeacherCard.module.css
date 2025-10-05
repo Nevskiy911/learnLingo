@@ -5,6 +5,7 @@
     border-radius: 24px;
     padding: 24px;
     width: 1184px;
+    background: #fff;
 }
 
 .img {
@@ -15,7 +16,7 @@
 }
 
 .border {
-    border: 3px solid #fbe9ba;
+    border: 3px solid var(--secondary-color);
     border-radius: 100px;
     width: 120px;
     height: 120px;
@@ -28,11 +29,113 @@
 .headerWrapper {
     display: flex;
     flex-direction: row-reverse;
-    gap: 149px;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.description {}
+.nameWrapper {
+    margin-bottom: 32px;
+}
+
+.description {
+    width: 968px;
+}
+
+.languages {
+    line-height: 150%;
+    color: #8a8a89;
+    margin-bottom: 8px;
+}
+
+.name {
+    font-size: 24px;
+    line-height: 100%;
+    color: #121417;
+}
+
+.skillsList {
+    margin-bottom: 16px;
+}
+
+.gray {
+    line-height: 150%;
+    color: #8a8a89;
+}
+
+.main {
+    line-height: 150%;
+    color: #121417;
+    margin-bottom: 8px;
+}
 
 .underline {
     text-decoration: underline;
+    text-decoration-skip-ink: none;
+}
+
+.reviewsList {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin: 32px 0;
+}
+
+.review {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.reviewer {
+    margin-bottom: 2px;
+    line-height: 150%;
+    color: #8a8a89;
+}
+
+.rating {
+    display: flex;
+    gap: 8px;
+}
+
+.iconRating {
+    fill: var(--primary-color);
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.bookBtn {
+    border-radius: 12px;
+    border: none;
+    padding: 16px 48px;
+    width: 232px;
+    height: 60px;
+    background: var(--primary-color);
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.bookBtn:hover,
+.bookBtn:focus {
+    background: var(--secondary-color);
+}
+
+.readMoreBtn {
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    background: none;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #121417;
 }

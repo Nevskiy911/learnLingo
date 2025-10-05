@@ -3,7 +3,7 @@ import { ref, onValue } from "firebase/database";
 import { db } from "../firebase";
 import TeacherCard from "../components/TeacherCard/TeacherCard";
 import { useFavorites } from "../context/FavoritesContext";
-
+import s from "./styles/Favorites.module.css";
 export default function Favorites() {
   const { favorites } = useFavorites();
   const [teachers, setTeachers] = useState([]);
@@ -32,15 +32,23 @@ export default function Favorites() {
   }
 
   return (
-    <div>
-      <h2>My Favorites</h2>
-      <ul>
+    <div className={s.wrapper}>
+      <ul className={s.list}>
         {favoriteTeachers.slice(0, visibleCount).map((t) => (
           <TeacherCard key={t.id} teacher={t} />
         ))}
       </ul>
+      {console.log(
+        "visibleCount:",
+        visibleCount,
+        "favoriteTeachers:",
+        favoriteTeachers.length
+      )}
+
       {visibleCount < favoriteTeachers.length && (
-        <button onClick={handleLoadMore}>Load more</button>
+        <button onClick={handleLoadMore} className={s.btn}>
+          Load more
+        </button>
       )}
     </div>
   );

@@ -9,14 +9,16 @@ import { AuthProvider } from "./context/AuthContext.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { FavoritesProvider } from "./context/FavoritesContext.jsx";
 import { ModalProvider } from "./context/ModalContext.jsx";
-
+import { ThemeProvider } from "./context/ThemeContext.jsx";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <ModalProvider>
         <AuthProvider>
           <FavoritesProvider>
-            <App />
+            <ThemeProvider>
+              <App />
+            </ThemeProvider>
           </FavoritesProvider>
         </AuthProvider>
       </ModalProvider>

@@ -36,3 +36,10 @@ img {
     max-width: 100%;
     display: block;
 }
+
+button {
+    cursor: pointer;
+    border: none;
+    margin: 0;
+    padding: 0;
+}

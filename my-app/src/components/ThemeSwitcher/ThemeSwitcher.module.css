@@ -1,0 +1,18 @@
+.switcher {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.themeBtn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.themeBtn:hover {
+    transform: scale(1.1);
+}

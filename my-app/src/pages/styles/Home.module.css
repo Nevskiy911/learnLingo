@@ -2,6 +2,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 24px;
+}
+
+.mainText {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 117%;
+    letter-spacing: -0.02em;
+    color: #121417;
+    margin-bottom: 32px;
+}
+
+.italic {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 137%;
+    letter-spacing: -0.02em;
+    color: #121417;
+    width: 471px;
 }
 
 .logoWrapper {
@@ -11,4 +35,53 @@
 .logo {
     display: flex;
     flex-direction: row;
+}
+
+.right {
+    border-radius: 30px;
+    width: 720px;
+    background: #f8f8f8;
+    padding: 98px 64px;
+    margin: 24px 0;
+}
+
+.btn {
+    border-radius: 12px;
+    border: none;
+    padding: 16px 88px;
+    width: 267px;
+    height: 60px;
+    background: var(--primary-color);
+    margin: 64px 0;
+    margin-bottom: 0;
+    transition: all cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.btn:hover,
+.btn:focus {
+    background: var(--secondary-color);
+}
+
+.footer {
+    display: flex;
+    gap: 100px;
+    padding: 40px 122px;
+    border: 1.50px dashed var(--primary-color);
+    border-radius: 30px;
+    height: 116px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerItem {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 16px;
+    width: auto;
+}
+
+.metrics {
+    white-space: nowrap;
 }
