@@ -1,4 +1,4 @@
-# Language Tutors 🌐
+# Learn Lingo 🌐
 
 A web application for discovering and booking online language lessons with professional tutors. Users can browse tutor profiles, filter by language, student level, and price per hour, and book trial lessons.
 
