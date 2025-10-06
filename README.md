@@ -93,20 +93,3 @@ npm start
 ```
 http://localhost:3000
 ```
-
-🗂 Project Structure
-
-src/
-├── components/
-│ ├── CustomSelect/
-│ ├── Filters/
-│ ├── TeacherCard/
-│ ├── CardsHeader/
-│ └── BookTrialModal/
-├── context/
-├── pages/
-│ ├── Home.jsx
-│ └── Teachers.jsx
-├── firebase.js
-├── App.jsx
-└── index.js
