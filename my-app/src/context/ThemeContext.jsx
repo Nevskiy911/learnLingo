@@ -1,18 +1,24 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { themes } from "./themes";
+import { useAuth } from "./AuthContext";
 
 const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [themeId, setThemeId] = useState(() => {
-    return localStorage.getItem("theme") || "yellow";
-  });
+  const { user } = useAuth();
+  const [themeId, setThemeId] = useState("yellow");
+
+  const storageKey = user ? `theme_${user.email}` : "theme_default";
+
+  useEffect(() => {
+    const saved = localStorage.getItem(storageKey);
+    setThemeId(saved || "yellow");
+  }, [storageKey]);
 
   const theme = themes.find((t) => t.id === themeId) || themes[0];
 
   useEffect(() => {
-    localStorage.setItem("theme", themeId);
-
+    localStorage.setItem(storageKey, themeId);
     document.documentElement.style.setProperty(
       "--primary-color",
       theme.primary
@@ -21,7 +27,7 @@ export const ThemeProvider = ({ children }) => {
       "--secondary-color",
       theme.secondary
     );
-  }, [themeId, theme]);
+  }, [themeId, theme, storageKey]);
 
   const changeTheme = (id) => setThemeId(id);
 

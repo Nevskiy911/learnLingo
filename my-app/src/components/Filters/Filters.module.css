@@ -1,0 +1,33 @@
+.filters {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+    background-color: #EEEEEE;
+    padding: 32px 64px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.select:checked {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 111%;
+    color: rgba(18, 20, 23, 0.2);
+}
+
+.resetBtn {
+    padding: 14px 18px;
+    border: none;
+    background-color: var(--primary-color);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 111%;
+    color: #121417;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 2px;
+}
+
+.resetBtn:hover {
+    background-color: var(--secondary-color);
+}

@@ -164,7 +164,6 @@
 }
 
 .submitBtn:hover,
-.submitBtn:focus,
-{
-background-color: var(--secondary-color);
+.submitBtn:focus {
+    background-color: var(--secondary-color);
 }

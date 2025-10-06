@@ -28,15 +28,12 @@ export function ModalProvider({ children }) {
   return (
     <ModalContext.Provider
       value={{
-        // auth modals
         loginModalOpen,
         registerModalOpen,
         openLoginModal,
         closeLoginModal,
         openRegisterModal,
         closeRegisterModal,
-
-        // book trial modal
         bookTrialModalOpen,
         selectedTeacher,
         openBookTrialModal,

@@ -25,7 +25,7 @@ export default function CardsHeader({ teacher }) {
       </ul>
       <FavoriteButton
         cardId={teacher.id}
-        onRequireAuth={() => alert("Доступно лише авторизованим")}
+        onRequireAuth={() => alert("You must log in!")}
       />
     </div>
   );

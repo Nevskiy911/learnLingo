@@ -139,3 +139,26 @@
     text-decoration-skip-ink: none;
     color: #121417;
 }
+
+.levelsWrapper {
+    margin-top: 32px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.levelBtn {
+    padding: 8px 12px;
+    border: 1px solid rgba(18, 20, 23, 0.2);
+    border-radius: 35px;
+    cursor: default;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    color: #121417;
+}
+
+.activeLevel {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}

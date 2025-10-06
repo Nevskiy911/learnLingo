@@ -1,16 +1,22 @@
 import { createContext, useContext, useEffect, useState } from "react";
+import { useAuth } from "./AuthContext";
 
 const FavoritesContext = createContext();
 
 export const FavoritesProvider = ({ children }) => {
-  const [favorites, setFavorites] = useState(() => {
-    const saved = localStorage.getItem("favorites");
-    return saved ? JSON.parse(saved) : [];
-  });
+  const { user } = useAuth();
+  const [favorites, setFavorites] = useState([]);
+
+  const storageKey = user ? `favorites_${user.email}` : "favorites_guest";
 
   useEffect(() => {
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-  }, [favorites]);
+    const saved = localStorage.getItem(storageKey);
+    setFavorites(saved ? JSON.parse(saved) : []);
+  }, [storageKey]);
+
+  useEffect(() => {
+    localStorage.setItem(storageKey, JSON.stringify(favorites));
+  }, [favorites, storageKey]);
 
   const isFavorite = (id) => favorites.includes(id);
 
@@ -20,11 +26,9 @@ export const FavoritesProvider = ({ children }) => {
     );
   };
 
-  const clearFavorites = () => setFavorites([]);
-
   return (
     <FavoritesContext.Provider
-      value={{ favorites, isFavorite, toggleFavorite, clearFavorites }}
+      value={{ favorites, isFavorite, toggleFavorite }}
     >
       {children}
     </FavoritesContext.Provider>

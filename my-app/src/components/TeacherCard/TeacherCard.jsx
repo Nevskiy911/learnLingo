@@ -7,6 +7,15 @@ export default function TeacherCard({ teacher }) {
   const [showBookTrial, setShowBookTrial] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
+  const levels = teacher.levels || [];
+  const languages = teacher.languages || [];
+  const allLevels = [
+    "A1 Beginner",
+    "A2 Elementary",
+    "B1 Intermediate",
+    "B2 Upper-Intermediate",
+  ];
+
   return (
     <div className={s.teacherCard}>
       <span className={s.border}>
@@ -31,7 +40,7 @@ export default function TeacherCard({ teacher }) {
         <ul className={s.skillsList}>
           <li className={s.main}>
             <span className={s.gray}>Speaks: </span>
-            <span className={s.underline}>{teacher.languages.join(", ")}</span>
+            <span className={s.underline}>{languages.join(", ")}</span>
           </li>
           <li className={s.main}>
             <span className={s.gray}>Lessons Info: </span>
@@ -41,6 +50,7 @@ export default function TeacherCard({ teacher }) {
             <span className={s.gray}>Conditions: </span>
             {teacher.conditions}
           </li>
+
           {expanded && (
             <>
               <li className={s.main}>{teacher.experience}</li>
@@ -75,6 +85,7 @@ export default function TeacherCard({ teacher }) {
                   })}
                 </ul>
               </li>
+
               <button
                 className={s.bookBtn}
                 onClick={() => setShowBookTrial(true)}
@@ -98,6 +109,19 @@ export default function TeacherCard({ teacher }) {
         >
           {expanded ? "Show less" : "Read more"}
         </button>
+
+        <div className={s.levelsWrapper}>
+          {allLevels.map((level) => (
+            <button
+              key={level}
+              className={`${s.levelBtn} ${
+                levels.includes(level) ? s.activeLevel : ""
+              }`}
+            >
+              {level}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
