@@ -10,7 +10,6 @@ import { BrowserRouter } from "react-router-dom";
 import { FavoritesProvider } from "./context/FavoritesContext.jsx";
 import { ModalProvider } from "./context/ModalContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
-import { Toaster } from "react-hot-toast";
 import { ToastProvider } from "./context/ToastContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
