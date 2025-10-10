@@ -11,6 +11,7 @@ import { FavoritesProvider } from "./context/FavoritesContext.jsx";
 import { ModalProvider } from "./context/ModalContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { Toaster } from "react-hot-toast";
+import { ToastProvider } from "./context/ToastContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -19,34 +20,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <AuthProvider>
           <FavoritesProvider>
             <ThemeProvider>
-              <App />
-              <Toaster
-                position="top-center"
-                toastOptions={{
-                  style: {
-                    background: "#fff",
-                    color: "#121417",
-                    border: "1px solid #E0E0E0",
-                    padding: "12px 16px",
-                    borderRadius: "12px",
-                    boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)",
-                    fontSize: "14px",
-                    fontWeight: 500,
-                  },
-                  success: {
-                    iconTheme: {
-                      primary: "#38b000",
-                      secondary: "#fff",
-                    },
-                  },
-                  error: {
-                    iconTheme: {
-                      primary: "#e63946",
-                      secondary: "#fff",
-                    },
-                  },
-                }}
-              />
+              <ToastProvider>
+                <App />
+              </ToastProvider>
             </ThemeProvider>
           </FavoritesProvider>
         </AuthProvider>

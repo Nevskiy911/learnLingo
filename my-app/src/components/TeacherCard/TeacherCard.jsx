@@ -6,8 +6,7 @@ import s from "./TeacherCard.module.css";
 export default function TeacherCard({ teacher }) {
   const [showBookTrial, setShowBookTrial] = useState(false);
   const [expanded, setExpanded] = useState(false);
-
-  const levels = teacher.levels || [];
+  const levels = Array.isArray(teacher.levels) ? teacher.levels : [];
   const languages = teacher.languages || [];
   const allLevels = [
     "A1 Beginner",

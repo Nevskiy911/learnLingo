@@ -16,7 +16,6 @@ export const FavoritesProvider = ({ children }) => {
       const parsed = saved ? JSON.parse(saved) : [];
       setFavorites(Array.isArray(parsed) ? parsed : []);
     } catch (error) {
-      console.error("Error reading favorites:", error);
       setFavorites([]);
     }
   }, [storageKey]);
@@ -25,7 +24,7 @@ export const FavoritesProvider = ({ children }) => {
     try {
       localStorage.setItem(storageKey, JSON.stringify(favorites));
     } catch (error) {
-      console.error("Error saving favorites:", error);
+      return error;
     }
   }, [favorites, storageKey]);
 

@@ -52,6 +52,7 @@ export default function RegisterModal({ onClose }) {
               {...register("name")}
               className={s.input}
               placeholder="Name"
+              autoComplete="username"
             />
             {errors.name && <p className={s.error}>{errors.name.message}</p>}
           </label>
@@ -62,6 +63,7 @@ export default function RegisterModal({ onClose }) {
               {...register("email")}
               className={s.input}
               placeholder="Email"
+              autoComplete="email"
             />
             {errors.email && <p className={s.error}>{errors.email.message}</p>}
           </label>
@@ -72,6 +74,7 @@ export default function RegisterModal({ onClose }) {
               {...register("password")}
               className={s.input}
               placeholder="Password"
+              autoComplete="new-password"
             />
             {errors.password && (
               <p className={s.error}>{errors.password.message}</p>

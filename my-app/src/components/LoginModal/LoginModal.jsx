@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useAuth } from "../../context/AuthContext";
+import { useToast } from "../../context/ToastContext";
 import Modal from "../Modal/Modal";
 import s from "../AuthModal/AuthModal.module.css";
 
@@ -15,6 +16,7 @@ const loginSchema = yup.object().shape({
 
 export default function LoginModal({ onClose }) {
   const { login } = useAuth();
+  const { showToast } = useToast();
 
   const {
     register,
@@ -28,8 +30,9 @@ export default function LoginModal({ onClose }) {
     try {
       await login(data.email, data.password);
       onClose();
+      showToast({ type: "success", message: "Logged in successfully" });
     } catch (err) {
-      alert("Login failed: " + err.message);
+      showToast({ type: "error", message: "Login failed: " + err.message });
     }
   };
 
@@ -40,7 +43,7 @@ export default function LoginModal({ onClose }) {
           <h2 className={s.title}>Log in</h2>
           <p className={s.description}>
             Welcome back! Please enter your credentials to access your account
-            and continue your search for an teacher.
+            and continue your search for a teacher.
           </p>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
@@ -50,6 +53,7 @@ export default function LoginModal({ onClose }) {
               {...register("email")}
               className={s.input}
               placeholder="Email"
+              autoComplete="email"
             />
             {errors.email && <p className={s.error}>{errors.email.message}</p>}
           </label>
@@ -60,6 +64,7 @@ export default function LoginModal({ onClose }) {
               {...register("password")}
               className={s.input}
               placeholder="Password"
+              autoComplete="current-password"
             />
             {errors.password && (
               <p className={s.error}>{errors.password.message}</p>

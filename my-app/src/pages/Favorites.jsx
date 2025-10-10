@@ -39,13 +39,6 @@ export default function Favorites() {
           <TeacherCard key={t.id} teacher={t} />
         ))}
       </ul>
-      {console.log(
-        "visibleCount:",
-        visibleCount,
-        "favoriteTeachers:",
-        favoriteTeachers.length
-      )}
-
       {visibleCount < favoriteTeachers.length && (
         <button onClick={handleLoadMore} className={s.btn}>
           Load more

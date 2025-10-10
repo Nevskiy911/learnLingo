@@ -21,7 +21,7 @@ export default function Layout() {
       await logout();
       clearFavorites();
     } catch (err) {
-      console.error("Logout failed:", err);
+      return err;
     }
   };
 
