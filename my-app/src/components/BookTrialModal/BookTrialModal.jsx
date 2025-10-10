@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import toast from "react-hot-toast";
 import Modal from "../Modal/Modal";
 import s from "./BookTrialModal.module.css";
 
@@ -27,10 +28,14 @@ export default function BookTrialModal({ teacher, onClose }) {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => {
-    console.log("Booking data:", data);
-    reset();
-    onClose();
+  const onSubmit = async (data) => {
+    try {
+      toast.success("Your trial lesson request has been sent successfully!");
+      reset();
+      onClose();
+    } catch (error) {
+      toast.error("Failed to send request. Please try again later.");
+    }
   };
 
   return (

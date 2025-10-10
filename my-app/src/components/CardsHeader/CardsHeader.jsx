@@ -1,4 +1,5 @@
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import { toast } from "react-hot-toast";
 import s from "./CardsHeader.module.css";
 
 export default function CardsHeader({ teacher }) {
@@ -23,9 +24,22 @@ export default function CardsHeader({ teacher }) {
           <span className={s.price}>{teacher.price_per_hour}$</span>
         </li>
       </ul>
+
       <FavoriteButton
         cardId={teacher.id}
-        onRequireAuth={() => alert("You must log in!")}
+        onRequireAuth={() =>
+          toast.error("Please log in to add favorites 💛", {
+            duration: 3000,
+            position: "top-right",
+            style: {
+              borderRadius: "10px",
+              background: "#333",
+              color: "#fff",
+              fontSize: "16px",
+            },
+            icon: "🔒",
+          })
+        }
       />
     </div>
   );

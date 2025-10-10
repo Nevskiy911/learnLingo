@@ -4,6 +4,7 @@ import { db } from "../firebase";
 import TeacherCard from "../components/TeacherCard/TeacherCard";
 import { useFavorites } from "../context/FavoritesContext";
 import s from "./styles/Favorites.module.css";
+
 export default function Favorites() {
   const { favorites } = useFavorites();
   const [teachers, setTeachers] = useState([]);
