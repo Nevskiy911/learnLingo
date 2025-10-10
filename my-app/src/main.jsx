@@ -11,21 +11,23 @@ import { FavoritesProvider } from "./context/FavoritesContext.jsx";
 import { ModalProvider } from "./context/ModalContext.jsx";
 import { ThemeProvider } from "./context/ThemeContext.jsx";
 import { ToastProvider } from "./context/ToastContext.jsx";
+import { Toaster } from "react-hot-toast";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ModalProvider>
-        <AuthProvider>
-          <FavoritesProvider>
-            <ThemeProvider>
-              <ToastProvider>
+      <ToastProvider>
+        <Toaster />
+        <ModalProvider>
+          <AuthProvider>
+            <FavoritesProvider>
+              <ThemeProvider>
                 <App />
-              </ToastProvider>
-            </ThemeProvider>
-          </FavoritesProvider>
-        </AuthProvider>
-      </ModalProvider>
+              </ThemeProvider>
+            </FavoritesProvider>
+          </AuthProvider>
+        </ModalProvider>
+      </ToastProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
